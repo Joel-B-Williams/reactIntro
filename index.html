@@ -9,22 +9,22 @@
 		<script src="node_modules/react-dom/dist/react-dom.js"></script>
 		<script>
 			const ce = React.createElement
-
-			const MyTitle = function () {
+			const MyTitle = function (props) {
+				// props = variable like anything else
 				// type, attributes/props, children
 				return (
 					React.createElement('div', null, 
-						ce('h1', {}, 'My second component')
+						ce('h1', null, props.title)
 						)
 					)
 			}
 			
 			const MyFirstComponent = function(){
 				return React.createElement('div', null, 
-					React.createElement(MyTitle),
-					ce(MyTitle),
-					React.createElement(MyTitle),
-					ce(MyTitle)
+					ce(MyTitle, { title: 'Game of Thrones' }),
+					ce(MyTitle, { title: 'Silicon Valley' }),
+					ce(MyTitle, { title: 'Rick & Morty' }),
+					ce(MyTitle, { title: 'Stranger Things '})
 					)
 			}
 
