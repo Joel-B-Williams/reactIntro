@@ -5,8 +5,11 @@
 </head>
 <body>
 	<div id="app">
-		<script src="node_modules/react/dist/react.js"></script>
-		<script src="node_modules/react-dom/dist/react-dom.js"></script>
+	<!-- thanks to webpack pulling everything into public/bundle.js, we can just script that one thing -->
+	<!-- min requirements are entry point (clientApp.jsx) and dump point (public/bundle.js) -->
+		<!-- <script src="node_modules/react/dist/react.js"></script> -->
+		<!-- <script src="node_modules/react-dom/dist/react-dom.js"></script> -->
+		<script src="public/bundle.js"></script>
 	</div>
 </body>
 </html>

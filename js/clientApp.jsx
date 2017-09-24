@@ -1,3 +1,6 @@
+import React from 'react';
+import { render } from 'react-dom';
+
 const ce = React.createElement;
 const MyTitle = function(props) {
   // props = variable like anything else, but convention says 'use props'
@@ -16,4 +19,4 @@ const MyFirstComponent = function() {
   );
 };
 
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'));
+render(React.createElement(MyFirstComponent), document.getElementById('app'));
