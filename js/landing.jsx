@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 
 const Landing = () =>
 	<div className="landing">
 		<h1>svideo</h1>
 		<input type="text" placeholder="Search" />
-		<a>or Browse All</a>
+		<Link to='/search'>or Browse All</Link>
 	</div>;
 
 export default Landing;

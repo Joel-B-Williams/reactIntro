@@ -2,11 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter, Route } from 'react-router-dom';
 import Landing from './landing';
+import Search from './search';
 // no curlies because this is a single-line (technically) and uses implicit return
 const App = () =>
 	<HashRouter>
 		<div className="app">
 			<Route exact path="/" component={Landing} />
+			<Route path="/search" component={Search} />
 		</div>
 	</HashRouter>;
 
