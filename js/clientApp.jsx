@@ -10,6 +10,7 @@ const App = () =>
 	<BrowserRouter>
 		<div className="app">
 			<Switch>
+				{/* this is how you write comments inside here*/}
 				<Route exact path="/" component={Landing} />
 				<Route path="/search" component={Search} />
 				<Route component={FourOhFour} />
