@@ -1,19 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-
+import { HashRouter, Route } from 'react-router-dom';
+import Landing from './landing';
 // no curlies because this is a single-line (technically) and uses implicit return
-const App = () => (
-  <div className='app' >
-    <div className='landing' >
-      <h1>svideo</h1>
-      <input type='text' placeholder='Search' />
-      <a>or Browse All</a>
-    </div>
-  </div>
-);
+const App = () =>
+	<HashRouter>
+		<div className="app">
+			<Route exact path="/" component={Landing} />
+		</div>
+	</HashRouter>;
 
 render(<App />, document.getElementById('app'));
-
 
 // INTRO STUFFS & NOTES
 // const ce = React.createElement;
