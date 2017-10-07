@@ -7,7 +7,9 @@ const Search = () => (
 	<div className='search'>
 		{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
 			cool trick to preview data */}
-		{preload.shows.map((show) => (<Showcard key={show.imdbID} {...show} />))}
+		<div>
+			{preload.shows.map((show) => (<Showcard key={show.imdbID} {...show} />))}
+		</div>
 	</div>
 );
 
