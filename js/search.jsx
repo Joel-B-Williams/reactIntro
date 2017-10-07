@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Showcard from './showcard';
 import preload from '../data';
 
+class Search extends Component {
+	constructor(props) {
+		super(props);
 
-const Search = () => (
-	<div className='search'>
-		<header>
-			<h1>svideo</h1>
-			<input type='text' placeholder='Search' />
-		</header>
-		{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
-			cool trick to preview data */}
-		<div>
-			{preload.shows.map((show) => (<Showcard key={show.imdbID} {...show} />))}
-		</div>
-	</div>
-);
+		this.state = {
+			searchTerm: 'this is some sort of debug statement'
+		};
+		// these bind the function to this component - can be done where function is called in render, technically, but then it's called any time you render (aka a lot) and that is horribly inefficient & resourse wasteful
+		this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
+	}
+
+	handleSearchTermChange(event) {
+		this.setState({ searchTerm: event.target.value })
+	}
+
+	render() {
+		return (
+			<div className='search'>
+				<header>
+					<h1>svideo</h1>
+					<input 
+						onChange={this.handleSearchTermChange} 
+						type='text' 
+						value={this.state.searchTerm} 
+						placeholder='Search' 
+					/>
+				</header>
+				{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
+	cool trick to preview data */}
+				<div>
+					{preload.shows.map((show) => (<Showcard key={show.imdbID} {...show} />))}
+				</div>
+			</div>
+		);
+	}
+}
 
 export default Search;
