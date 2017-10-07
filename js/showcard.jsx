@@ -4,29 +4,26 @@ import { shape, string } from 'prop-types';
 const Showcard = props =>
 	<div className="showcard">
 		<div className="show-card">
-			<img alt={`${props.show.title} Show Poster`} src={`/public/img/posters/${props.show.poster}`} />
+			<img alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
 			<div>
 				<h3>
-					{props.show.title}
+					{props.title}
 				</h3>
 				<h4>
-					({props.show.year})
+					({props.year})
 				</h4>
 				<p>
-					{props.show.description}
+					{props.description}
 				</p>
 			</div>
 		</div>
-		)}
 	</div>;
 
 Showcard.propTypes = {
-	show: shape({
-		poster: string.isRequired,
-		title: string.isRequired,
-		year: string.isRequired,
-		description: string.isRequired
-	}).isRequired
+	poster: string.isRequired,
+	title: string.isRequired,
+	year: string.isRequired,
+	description: string.isRequired
 }
 
 export default Showcard;
