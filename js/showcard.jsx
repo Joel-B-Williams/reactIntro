@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape, string } from 'prop-types';
 
 const Showcard = props =>
 	<div className="showcard">
@@ -18,5 +19,14 @@ const Showcard = props =>
 		</div>
 		)}
 	</div>;
+
+Showcard.propTypes = {
+	show: shape({
+		poster: string.isRequired,
+		title: string.isRequired,
+		year: string.isRequired,
+		description: string.isRequired
+	}).isRequired
+}
 
 export default Showcard;
