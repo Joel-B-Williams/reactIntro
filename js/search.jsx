@@ -25,9 +25,10 @@ class Search extends Component {
 		 };
 
 		 ... stuff... 
-		 
+
 		}
 		NOTE -> no bind called in class definition
+		Works because arrow functions do not create a new context, so there is no new 'this', and no need to bind to context of the class
 	*/
 
 	handleSearchTermChange(event) {
