@@ -13,6 +13,23 @@ class Search extends Component {
 		this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
 	}
 
+	/* 
+	 alternative to constructor(props) function... 
+	 
+	 class Search extends Component {
+		 state = {
+			 searchTerm: ''
+		 };
+		 handleSearchTermChange = event => {
+			 this.setState({ searchTerm: event.target.value });
+		 };
+
+		 ... stuff... 
+		 
+		}
+		NOTE -> no bind called in class definition
+	*/
+
 	handleSearchTermChange(event) {
 		this.setState({ searchTerm: event.target.value })
 	}
