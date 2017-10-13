@@ -4,7 +4,15 @@
         "build": "webpack",
         "watch": "webpack --watch",
         "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js, jsx}\"",
+        "lint": "eslint **/*.{js/jsx} --quiet",
+        "test": "jest", 
+        "test:update": "jest -u",
         "dev": "webpack-dev-server"
+    },
+    "jest": {
+        "snapshotSerializers": [
+            "jest-serializer-enzyme"
+        ]
     },
     "dependencies": {
         "axios": "0.16.1",

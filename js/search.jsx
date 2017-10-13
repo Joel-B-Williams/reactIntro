@@ -41,19 +41,19 @@ class Search extends Component {
 			<div className='search'>
 				<header>
 					<h1>svideo</h1>
-					<input 
-						onChange={this.handleSearchTermChange} 
-						type='text' 
-						value={this.state.searchTerm} 
-						placeholder='Search' 
+					<input
+						onChange={this.handleSearchTermChange}
+						type='text'
+						value={this.state.searchTerm}
+						placeholder='Search'
 					/>
 				</header>
 				{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
-	cool trick to preview data */}
+cool trick to preview data */}
 				<div>
 					{preload.shows
-					.filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
-					.map((show) => (<Showcard key={show.imdbID} {...show} />))}
+						.filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+						.map((show) => (<Showcard key={show.imdbID} {...show} />))}
 				</div>
 			</div>
 		);
