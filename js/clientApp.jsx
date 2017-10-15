@@ -1,24 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './landing';
-import Search from './search';
-// no curlies because this is a single-line (technically) and uses implicit return
-const FourOhFour = () => <h1>404</h1>;
+import App from './app';
 
-const App = () =>
-	<BrowserRouter>
-		<div className="app">
-			<Switch>
-				{/* this is how you write comments inside here*/}
-				<Route exact path="/" component={Landing} />
-				<Route path="/search" component={Search} />
-				<Route component={FourOhFour} />
-			</Switch>
-		</div>
-	</BrowserRouter>;
+const renderApp = () => {
+	render(<App />, document.getElementById('app'));
+}
+renderApp();
 
-render(<App />, document.getElementById('app'));
+if (module.hot) {
+	module.hot.accept('./app', () => {
+		renderApp();
+	});
+}
 
 // INTRO STUFFS & NOTES
 // const ce = React.createElement;
