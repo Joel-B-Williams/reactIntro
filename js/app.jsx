@@ -16,7 +16,7 @@ const App = () => (
         <Route component={FourOhFour} />
       </Switch>
     </div>
-  </BrowserRouter>;
+  </BrowserRouter>
 );
 
 export default App;
