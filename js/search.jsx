@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Showcard from './showcard';
 import preload from '../data';
