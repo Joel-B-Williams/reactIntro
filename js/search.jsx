@@ -34,7 +34,7 @@ class Search extends Component {
 		- Works because arrow functions do not create a new context, so there is no new 'this', and no need to bind to context of the class
 	*/
 
-	handleSearchTermChange(event) {
+	handleSearchTermChange(event: SyntheticKeyboardEvent & {target: HTMLInputElement}) {
 		this.setState({ searchTerm: event.target.value })
 	}
 
