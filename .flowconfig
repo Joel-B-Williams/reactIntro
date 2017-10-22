@@ -4,6 +4,7 @@
 [include]
 
 [libs]
+styled-components
 
 [lints]
 

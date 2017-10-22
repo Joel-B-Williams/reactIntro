@@ -1,3 +1,5 @@
+//@flow
+
 import React from 'react';
 import { shape, string } from 'prop-types';
 import styled from 'styled-components';
@@ -24,7 +26,12 @@ const Image = styled.img`
 
 	// <div className="showcard">
 	// 	<div className="show-card">
-const Showcard = props =>
+const Showcard = (props: {
+	poster: string,
+	title: string,
+	year: string,
+	description: string
+}) =>
 	<Wrapper>
 		<Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
 		<div>
@@ -42,11 +49,12 @@ const Showcard = props =>
 	// 	</div>
 	// </div>;
 
-Showcard.propTypes = {
-	poster: string.isRequired,
-	title: string.isRequired,
-	year: string.isRequired,
-	description: string.isRequired
-}
+// no longer need to declare separately when typing with flow
+// Showcard.propTypes = {
+// 	poster: string.isRequired,
+// 	title: string.isRequired,
+// 	year: string.isRequired,
+// 	description: string.isRequired
+// }
 
 export default Showcard;
