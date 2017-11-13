@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './landing';
 import Search from './search';
+import Details from './details';
 
 // no curlies because this is a single-line (technically) and uses implicit return
 const FourOhFour = () => <h1>404</h1>;
@@ -13,6 +14,7 @@ const App = () => (
         {/* this is how you write comments inside here*/}
         <Route exact path="/" component={Landing} />
         <Route path="/search" component={Search} />
+        <Route path="/details/:id" component={Details} />
         <Route component={FourOhFour} />
       </Switch>
     </div>
