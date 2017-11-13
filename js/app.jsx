@@ -15,13 +15,20 @@ const App = () => (
       <Switch>
         {/* this is how you write comments inside here*/}
         <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
+        <Route 
+          path="/search" 
+          component={props => 
+            <Search shows={preload.shows} {...props} />} />
       {/*pass Details as a component so you can give it props, in this case a function to find the correct show by imbdID*/}
         <Route 
           path="/details/:id" 
           component={(props: { match: Match }) => 
             <Details 
-              show={preload.shows.find((show) => props.match.params.id === show.imdbID)} {...props} />} />
+              show={preload.shows.find((show) => 
+                props.match.params.id === show.imdbID)} {...props} 
+            />
+          } 
+        />
         <Route component={FourOhFour} />
       </Switch>
     </div>

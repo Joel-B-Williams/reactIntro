@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import Showcard from './showcard';
-import preload from '../data';
+// import preload from '../data';
 
 class Search extends Component {
 	constructor(props) {
@@ -11,6 +11,10 @@ class Search extends Component {
 		this.state = {
 			searchTerm: ''
 		};
+		
+		// props: {
+		// 	shows: Array<Show>
+		// };
 		// these bind the function to this component - can be done where function is called in render, technically, but then it's called any time you render (aka a lot) and that is horribly inefficient & resourse wasteful
 		this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
 	}
@@ -53,7 +57,7 @@ class Search extends Component {
 				{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
 cool trick to preview data */}
 				<div>
-					{preload.shows
+					{this.props.shows
 						.filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
 						.map((show) => (<Showcard key={show.imdbID} {...show} />))}
 				</div>
