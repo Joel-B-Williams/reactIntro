@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Landing from './landing';
 import Search from './search';
 import Details from './details';
+import type { Match } from 'react-router-dom';
 import preload from '../data.json';
 
 // no curlies because this is a single-line (technically) and uses implicit return
@@ -18,7 +19,7 @@ const App = () => (
       {/*pass Details as a component so you can give it props, in this case a function to find the correct show by imbdID*/}
         <Route 
           path="/details/:id" 
-          component={props => 
+          component={(props: { match: Match }) => 
             <Details 
               show={preload.shows.find((show) => props.match.params.id === show.imdbID)} {...props} />} />
         <Route component={FourOhFour} />
