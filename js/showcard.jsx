@@ -3,6 +3,7 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // returns a div that has been styled with the given css
 // allows a component to be intrinsically linked to its own styling
@@ -26,26 +27,23 @@ const Image = styled.img`
 
 	// <div className="showcard">
 	// 	<div className="show-card">
-const Showcard = (props: {
-	poster: string,
-	title: string,
-	year: string,
-	description: string
-}) =>
-	<Wrapper>
-		<Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
-		<div>
-			<h3>
-				{props.title}
-			</h3>
-			<h4>
-				({props.year})
-			</h4>
-			<p>
-				{props.description}
-			</p>
-		</div>
-	</Wrapper>
+const Showcard = (props: Show) =>
+<Link to={`/details/${props.imdbID}`}>
+		<Wrapper>
+			<Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
+			<div>
+				<h3>
+					{props.title}
+				</h3>
+				<h4>
+					({props.year})
+				</h4>
+				<p>
+					{props.description}
+				</p>
+			</div>
+		</Wrapper>
+	</Link>
 	// 	</div>
 	// </div>;
 
