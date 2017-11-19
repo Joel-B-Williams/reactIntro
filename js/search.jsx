@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import Showcard from './showcard';
+import Header from './header';
 // import preload from '../data';
 
 class Search extends Component {
@@ -45,15 +46,7 @@ class Search extends Component {
 	render() {
 		return (
 			<div className='search'>
-				<header>
-					<h1>svideo</h1>
-					<input
-						onChange={this.handleSearchTermChange}
-						type='text'
-						value={this.state.searchTerm}
-						placeholder='Search'
-					/>
-				</header>
+				<Header showSearch/>
 				{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
 cool trick to preview data */}
 				<div>
