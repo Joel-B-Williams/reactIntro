@@ -1,15 +1,14 @@
 // @flow
 
 import React from 'react'
+import Header from './header';
 
 const Details = (props: { show: Show }) => {
 	// quick way to set each of these values inside props.show to their respective names
 	const { title, description, year, poster, trailer } = props.show;
 	return (
 		<div className='details'>
-			<header>
-				<h1>svideo</h1>
-			</header>
+			<Header />
 			<section>
 				<h1>{title}</h1>
 				<h2>({year})</h2>
