@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+// functional component, no 'this.props...', just props...
 const Header = (props: 
 	{ 
 		showSearch?: boolean,
