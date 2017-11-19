@@ -46,7 +46,11 @@ class Search extends Component {
 	render() {
 		return (
 			<div className='search'>
-				<Header showSearch/>
+				<Header 
+					showSearch 
+					handleSearchTermChange={this.handleSearchTermChange}
+					searchTerm={this.state.searchTerm}
+				/>
 				{/* <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
 cool trick to preview data */}
 				<div>
