@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 // allows a component to be intrinsically linked to its own styling
 // however is less efficient, and must be compiled "awkwardly" by browser, so it's cool but not mainstream (yet)
 // this creates a class with the following css and gives the div that class (so at least it's not inline style)
-const Wrapper = styled(Link)`
+const Wrapper = styled((Link: any))`
 	width: 32%;
 	border: 2px solid #333;
 	border-radius: 4px;
