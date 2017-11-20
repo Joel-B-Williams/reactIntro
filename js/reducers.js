@@ -16,7 +16,7 @@ const setSearchTerm = (state, action) => {
 };
 
 
-// root store - takes in action & state, returns state.  ZERO side effects.
+// root reducer - takes in action & state, returns state.  ZERO side effects.
 // Root reducer must take care of default state (it is initially called with no state, so needs a default)
 // Root Reducer must be able to handle unknown actions (action.type bit)
 const rootReducer = (state = DEFAULT_STATE, action) => {
