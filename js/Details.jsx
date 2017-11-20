@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import Header from './header';
-import Spinner from './spinner';
+import Header from './Header';
+import Spinner from './Spinner';
 
 class Details extends Component {
 	state = {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './landing';
-import Search from './search';
-import Details from './details';
+import Landing from './Landing';
+import Search from './Search';
+import Details from './Details';
 import type { Match } from 'react-router-dom';
 import preload from '../data.json';
 

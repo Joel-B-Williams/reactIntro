@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Perf from 'react-addons-perf';
-import App from './app';
+import App from './App';
 // temp perf tools - do not ship to production
 window.Perf = Perf;
 Perf.start();
@@ -12,7 +12,7 @@ const renderApp = () => {
 renderApp();
 
 if (module.hot) {
-	module.hot.accept('./app', () => {
+	module.hot.accept('./App', () => {
 		renderApp();
 	});
 }

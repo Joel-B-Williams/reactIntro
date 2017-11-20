@@ -1,8 +1,8 @@
 // @flow
 
 import React, { Component } from 'react';
-import Showcard from './showcard';
-import Header from './header';
+import Showcard from './Showcard';
+import Header from './Header';
 // import preload from '../data';
 
 class Search extends Component {
