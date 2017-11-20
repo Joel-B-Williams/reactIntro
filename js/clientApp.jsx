@@ -1,6 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import Perf from 'react-addons-perf';
 import App from './app';
+// temp perf tools - do not ship to production
+window.Perf = Perf;
+Perf.start();
 
 const renderApp = () => {
 	render(<App />, document.getElementById('app'));

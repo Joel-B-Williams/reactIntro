@@ -37,7 +37,7 @@ class Details extends Component {
 				<section>
 					<h1>{title}</h1>
 					<h2>({year})</h2>
-					{ratingComponent}
+				  {/*	{ratingComponent} <- API not working so always spinner*/}
 					<img src={`/public/img/posters/${poster}`} alt={`Poster for ${title}`}/>
 					<p>{description}</p>
 				</section>
