@@ -30,7 +30,12 @@ const Image = styled.img`
 	// <div className="showcard">
 	// 	<div className="show-card">
 class Showcard extends Component {
-	props: Show
+	// lifecycle method to tell component when to update
+	shouldComponentUpdate(nextProps, nextState) {
+		// we don't want a showcard to re-render (it's fully static) so just return false and it never will (after the first render) 
+		return false;
+	}
+	props: Show;
 	render()
 	{
 		return (
