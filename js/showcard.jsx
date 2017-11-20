@@ -1,6 +1,6 @@
 //@flow
 
-import React from 'react';
+import React, { Component } from 'react';
 import { shape, string } from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -29,21 +29,28 @@ const Image = styled.img`
 
 	// <div className="showcard">
 	// 	<div className="show-card">
-const Showcard = (props: Show) =>
-	<Wrapper to={`/details/${props.imdbID}`}>
-			<Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
-			<div>
-				<h3>
-					{props.title}
-				</h3>
-				<h4>
-					({props.year})
-				</h4>
-				<p>
-					{props.description}
-				</p>
-			</div>
-	</Wrapper>
+class Showcard extends Component {
+	props: Show
+	render()
+	{
+		return (
+			<Wrapper to={`/details/${this.props.imdbID}`}>
+					<Image alt={`${this.props.title} Show Poster`} src={`/public/img/posters/${this.props.poster}`} />
+					<div>
+						<h3>
+							{this.props.title}
+						</h3>
+						<h4>
+							({this.props.year})
+						</h4>
+						<p>
+							{this.props.description}
+						</p>
+					</div>
+			</Wrapper>
+		);
+	};
+} 
 	// 	</div>
 	// </div>;
 
