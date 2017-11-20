@@ -35,6 +35,10 @@ class Showcard extends Component {
 		// we don't want a showcard to re-render (it's fully static) so just return false and it never will (after the first render) 
 		return false;
 	}
+	// theoretical where you want component to update if it's rating props updates (and only then)
+	// shouldComponentUpdate(nextProps, nextState) {
+	// 	return this.props.rating !== nextProps.rating;
+	// }
 	props: Show;
 	render()
 	{
