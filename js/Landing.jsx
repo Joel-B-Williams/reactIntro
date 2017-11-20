@@ -11,6 +11,8 @@ const Landing = (props: {searchTerm: string, handleSearchTermChange: Function}) 
 		<Link to="/search">or Browse All</Link>
 	</div>;
 
+
+//NOTE neither of these are specific built-in-methods.  Just constant names.
 // putting parens around the object tells react you're actually returning an object literal instead of declaring a function body
 // this takes the full Redux state & pulls out only the part landing cares about (searchTerm).  Connected with connect below
 const mapStateToProps = (state) => ({ searchTerm: state.searchTerm });
