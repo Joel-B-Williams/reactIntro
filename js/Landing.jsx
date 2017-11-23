@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Header from './Header';
+import type {RouterHistory} from 'react-router-dom';
 import { setSearchTerm } from './actionCreators';
 
-const Landing = (props: {searchTerm: string, handleSearchTermChange: Function}) =>
-	<div className="landing">
-		<h1>{props.searchTerm || 'svideo'}</h1>
-		<input onChange={props.handleSearchTermChange} value={props.searchTerm} type="text" placeholder="Search" />
-		<Link to="/search">or Browse All</Link>
-	</div>;
+class Landing extends Component {
+	props: {
+		searchTerm: string, 
+		handleSearchTermChange: Function,
+		history: RouterHistory
+	};
+// route components have access to history, for others you'd have to specifically ask for access to context (it's hidden by default)
+	goToSearch = (event: SyntheticEvent) => 
+	{
+		event.preventDefault();
+		this.props.history.push('/search');
+	}
+
+	render()
+	{
+		return (
+			<div className="landing">
+				<h1>{this.props.searchTerm || 'svideo'}</h1>
+				<form onSubmit={this.goToSearch}>
+					<input 
+						onChange={this.props.handleSearchTermChange} 
+						value={this.props.searchTerm} 
+						type="text" 
+						placeholder="Search" 
+					/>
+				</form>
+				<Link to="/search">or Browse All</Link>
+			</div>
+		);
+	};
+} 
 
 
 //NOTE neither of these are specific built-in-methods.  Just constant names.
