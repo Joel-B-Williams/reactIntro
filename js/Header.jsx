@@ -10,7 +10,7 @@ const Header = (props:
 		handleSearchTermChange: Function,
 		searchTerm: String
 	}) => {
-	let utilSpace
+	let utilSpace;
 	if (props.showSearch){
 		utilSpace = (
 			<input

@@ -21,7 +21,7 @@ class Landing extends Component {
 	{
 		return (
 			<div className="landing">
-				<h1>{this.props.searchTerm || 'svideo'}</h1>
+				<h1>svideo</h1>
 				<form onSubmit={this.goToSearch}>
 					<input 
 						onChange={this.props.handleSearchTermChange} 
@@ -30,7 +30,12 @@ class Landing extends Component {
 						placeholder="Search" 
 					/>
 				</form>
-				<Link to="/search">or Browse All</Link>
+				<Link 
+					to="/search"
+					onClick={clearSearch()} 
+				>
+					or Browse All
+				</Link>
 			</div>
 		);
 	};
@@ -48,6 +53,13 @@ const mapStateToProps = (state) => ({ searchTerm: state.searchTerm });
 const mapDispatchToProps = (dispatch: Function) => ({
 	handleSearchTermChange(event) {
 		dispatch(setSearchTerm(event.target.value));
+	}
+});
+
+// Dispatch function used on button click - not 'connected' (that only takes the two read/set functions)
+const clearSearch = (dispatch: Function) => ({
+	handleSearchTermChange() {
+		dispatch(setSearchTerm(''));
 	}
 });
 
