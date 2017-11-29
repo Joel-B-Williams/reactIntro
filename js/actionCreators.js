@@ -1,3 +1,4 @@
+// @flow
 import { SET_SEARCH_TERM } from './actions';
 
 // formats input into useable action
